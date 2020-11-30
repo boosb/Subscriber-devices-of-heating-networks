@@ -23,11 +23,11 @@
                 Определить расход сточных вод.</p>
             <h2 class="sub-title">начальные значения</h2>
             <label class="water-supply__given">
-                <input class="water-supply__given-item" type="number">
+                <input class="water-supply__given-item number-apartments" type="number">
                 число квартир n<sub>кв</sub>
             </label>
             <label class="water-supply__given">
-                <input class="water-supply__given-item" type="number">
+                <input class="water-supply__given-item average-occupancy" type="number">
                 средняя заселенность V<sub>o</sub>
             </label>
             <input class="water-supply__send-one" type="submit" value="Посчитать">
@@ -55,27 +55,27 @@
                 </li>
                 <li class="water-supply__list-item">
                     <p>Определяем секундную вероятность действия приборов по формуле:</p>
-                    <p>Число потребителей U = V<sup>o</sup> * n<sup>кв</sup> = <span
-                            class="water-supply__answer-one"></span></p>
+                    <p>Число потребителей U = V<sub>o</sub> * n<sub>кв</sub> = <span
+                            class="water-supply__answer-main"></span></p>
                     <p>
                     <div class="water-supply__formula">P<sup>tot</sup>=<div class="formula-row"></div>
                         <div class="numerator">q<sup>tot</sup><sub>hr,u</sub> * U</div>
                         <div class="denominator">3600 * q<sup>tot</sup><sub>o</sub> * N<sup>tot</sup></div>
-                        <div class="water-supply__total water-supply__answer-sec-tot">=</div>
+                        <div class="water-supply__total water-supply__answer-sec-tot"></div>
                     </div>
                     </p>
                     <p>
                     <div class="water-supply__formula">P<sup>c</sup>=<div class="formula-row"></div>
                         <div class="numerator">q<sup>c</sup><sub>hr,u</sub> * U</div>
                         <div class="denominator">3600 * q<sup>c</sup><sub>o</sub> * N<sup>c</sup></div>
-                        <div class="water-supply__total water-supply__answer-sec-c">=</div>
+                        <div class="water-supply__total water-supply__answer-sec-c"></div>
                     </div>
                     </p>
                     <p>
                     <div class="water-supply__formula">P<sup>h</sup>=<div class="formula-row"></div>
                         <div class="numerator">q<sup>h</sup><sub>hr,u</sub> * U</div>
                         <div class="denominator">3600 * q<sup>h</sup><sub>o</sub> * N<sup>h</sup></div>
-                        <div class="water-supply__total water-supply__answer-sec-h">=</div>
+                        <div class="water-supply__total water-supply__answer-sec-h"></div>
                     </div>
                     </p>
                 </li>
@@ -102,24 +102,24 @@
                     <p>Определим часовую вероятность действия приборов по формулам:</p>
                     <p>
                     <div class="water-supply__formula">P<sup>tot</sup><sub>hr</sub> =<div class="formula-row-two"></div>
-                        <div class="numerator-two">3600 * P<sup>tot</sup><sub>hr,u</sub> * q<sup>tot</sup><sub>o</sub>
+                        <div class="numerator-two">3600 * P<sup>tot</sup> * q<sup>tot</sup><sub>o</sub>
                         </div>
                         <div class="denominator-two">q<sup>tot</sup><sub>o,hr</sub></div>
-                        <div class="water-supply__total-two water-supply__answer-hour-tot">=</div>
+                        <div class="water-supply__total-two water-supply__answer-hour-tot"></div>
                     </div>
                     </p>
                     <p>
                     <div class="water-supply__formula">P<sup>c</sup><sub>hr</sub> =<div class="formula-row-two"></div>
-                        <div class="numerator-two">3600 * P<sup>c</sup><sub>hr,u</sub> * q<sup>c</sup><sub>o</sub></div>
+                        <div class="numerator-two">3600 * P<sup>c</sup> * q<sup>c</sup><sub>o</sub></div>
                         <div class="denominator-two">q<sup>c</sup><sub>o,hr</sub></div>
-                        <div class="water-supply__total-two water-supply__answer-hour-c">=</div>
+                        <div class="water-supply__total-two water-supply__answer-hour-c"></div>
                     </div>
                     </p>
                     <p>
                     <div class="water-supply__formula">P<sup>h</sup><sub>hr</sub> =<div class="formula-row-two"></div>
-                        <div class="numerator-two">3600 * P<sup>h</sup><sub>hr,u</sub> * q<sup>h</sup><sub>o</sub></div>
+                        <div class="numerator-two">3600 * P<sup>h</sup> * q<sup>h</sup><sub>o</sub></div>
                         <div class="denominator-two">q<sup>h</sup><sub>o,hr</sub></div>
-                        <div class="water-supply__total-two water-supply__answer-hour-h">=</div>
+                        <div class="water-supply__total-two water-supply__answer-hour-h"></div>
                     </div>
                     </p>
                 </li>
@@ -130,19 +130,19 @@
                     <p>N<sup>tot</sup>P<sup>tot</sup><sub>hr</sub> = <span
                             class="water-supply__answer-NP-tot-hr"></span>; α<sup>tot</sup><sub>hr</sub> = <span
                             class="water-supply__answer-alpha-tot-hr"></span>;</p>
-                    <p>N<sup>c</sup>P<sup>c</sup><sub>hr</sub> = <span class="water-supply__answer-NP-tot-hr"></span>;
-                        α<sup>c</sup><sub>hr</sub> = <span class="water-supply__answer-alpha-tot-hr"></span>;</p>
-                    <p>N<sup>h</sup>P<sup>h</sup><sub>hr</sub> = <span class="water-supply__answer-NP-tot-hr"></span>;
-                        α<sup>h</sup><sub>hr</sub> = <span class="water-supply__answer-alpha-tot-hr"></span>;</p>
+                    <p>N<sup>c</sup>P<sup>c</sup><sub>hr</sub> = <span class="water-supply__answer-NP-c-hr"></span>;
+                        α<sup>c</sup><sub>hr</sub> = <span class="water-supply__answer-alpha-c-hr"></span>;</p>
+                    <p>N<sup>h</sup>P<sup>h</sup><sub>hr</sub> = <span class="water-supply__answer-NP-h-hr"></span>;
+                        α<sup>h</sup><sub>hr</sub> = <span class="water-supply__answer-alpha-h-hr"></span>;</p>
                 </li>
                 <li class="water-supply__list-item">
                     <p>Определяем расчётные часовые расходы.</p>
                     <p>q<sup>tot</sup><sub>hr</sub> = 5 * q<sup>tot</sup><sub>o,hr</sub> * α<sup>tot</sup><sub>hr</sub>
-                        = <span class="water-supply__answer-q-tot"></span>;</p>
+                        = <span class="water-supply__answer-q-tot-hr"></span>;</p>
                     <p>q<sup>c</sup><sub>hr</sub> = 5 * q<sup>c</sup><sub>o,hr</sub> * α<sup>c</sup><sub>hr</sub> =
-                        <span class="water-supply__answer-q-c"></span>;</p>
+                        <span class="water-supply__answer-q-c-hr"></span>;</p>
                     <p>q<sup>h</sup><sub>hr</sub> = 5 * q<sup>h</sup><sub>o,hr</sub> * α<sup>h</sup><sub>hr</sub> =
-                        <span class="water-supply__answer-q-h"></span>;</p>
+                        <span class="water-supply__answer-q-h-hr"></span>;</p>
                 </li>
                 <li class="water-supply__list-item">
                     <p>Определяем расход сточных вод согласно п. 3.5 СНиП 2.04.01-85*.</p>
