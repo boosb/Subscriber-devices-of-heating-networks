@@ -1,0 +1,135 @@
+html{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000;
+}
+
+button{
+    margin: 0;
+    border: none; 
+    padding: 0;
+    outline: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, li, ol {
+    /*list-style: none;*/
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.container {
+    max-width: 1780px;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.main-title{
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+.sub-title{
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+.water-supply__list{
+    margin-left: 20px;
+}
+
+.water-supply__given{
+    display: block;
+    margin: 10px 0;
+}
+
+.water-supply__formula{
+    position: relative;
+    width: 200px;
+	height: 27px;
+   /* background:;*/
+    margin: 45px 0;
+}
+
+.formula-row{
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    height: 1px;
+    width: 150px;
+    background-color: #000;
+}
+
+.numerator{
+    position: absolute;
+    top: -17px;
+    right: 45px;
+}
+
+.denominator{
+    position: absolute;
+    bottom: -17px;
+    right: 25px;
+}
+
+.water-supply__total{
+    position: absolute;
+    top: 5px;
+    right: -5px;
+}
+
+.formula-row-two{
+    position: absolute;
+    top: 13px;
+    right: -10px;
+    height: 1px;
+    width: 150px;
+    background-color: #000;
+}
+
+.numerator-two{
+    position: absolute;
+    top: -17px;
+    right: -8px;
+}
+
+.denominator-two{
+    position: absolute;
+    bottom: -17px;
+    right: 40px;
+}
+
+.water-supply__total-two{
+    position: absolute;
+    top: 5px;
+    right: -30px;
+}

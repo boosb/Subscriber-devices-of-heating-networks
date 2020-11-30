@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <section class="water-supply">
+        <div class="container">
+            <h1 class="main-title">СИСТЕМА ВОДОСНАБЖЕНИЯ</h1>
+            <h2 class="sub-title">ЗАДАЧА 1</h2>
+            <p>Определить секундный и часовой расходы воды для жилого дома с централизованным горячим водоснабжением с
+                числом квартир nкв = 280 и средней заселённостью Vo = 4,0 чел/кв. В каждой квартире установлены
+                следующие санитарно-технические приборы: ванны, длиной 1700 мм, оборудованные душами, умывальник,
+                унитаз, кухонная мойка.
+                Определить расход сточных вод.</p>
+            <h2 class="sub-title">начальные значения</h2>
+            <label class="water-supply__given">
+                <input class="water-supply__given-item" type="number">
+                число квартир n<sub>кв</sub>
+            </label>
+            <label class="water-supply__given">
+                <input class="water-supply__given-item" type="number">
+                средняя заселенность V<sub>o</sub>
+            </label>
+            <input class="water-supply__send-one" type="submit" value="Посчитать">
+
+            <h2 class="sub-title">РЕШЕНИЕ</h2>
+            <ol class="water-supply__list">
+                <li class="water-supply__list-item">
+                    <p>Устанавливаем число водоразборных приборов в здании</p>
+                    <p>N<sup>tot</sup> = N<sup>c</sup>= <span class="water-supply__answer-N-tot"></span>; N<sup>h</sup>=
+                        <span class="water-supply__answer-N-h"></span>,
+                    </p>
+                </li>
+                <li class="water-supply__list-item">
+                    <p>В соответствии с прил. 3 СНиП 2.04.01-85* нормы расхода воды на одного потребителя в час
+                        наибольшего водопотребления составляет:</p>
+                    <p>q<sup>tot</sup><sub>hr,u</sub> = 15,6 л/ч; - общий</p>
+                    <p>q<sup>h</sup><sub>hr,u</sub> = 10 л/ч; - горячей воды</p>
+                    <p>q<sup>c</sup><sub>hr,u</sub> = 15,6 – 10 = 5,6 л/ч. - холодной воды</p>
+                </li>
+                <li class="water-supply__list-item">
+                    <p>По той же таблице норма расхода воды санитарно-техническим прибором:</p>
+                    <p>q<sup>tot</sup><sub>o</sub> = 0,3 л/с (q<sup>tot</sup><sub>o,hr</sub> = 300 л/ч); - общий</p>
+                    <p>q<sup>c</sup><sub>o</sub> = 0,2 л/с (q<sup>c</sup><sub>o,hr</sub> = 200 л/ч); - холодной воды</p>
+                    <p>q<sup>h</sup><sub>o</sub> = 0,2 л/с (q<sup>h</sup><sub>o,hr</sub> = 200 л/ч). - горячей воды</p>
+                </li>
+                <li class="water-supply__list-item">
+                    <p>Определяем секундную вероятность действия приборов по формуле:</p>
+                    <p>Число потребителей U = V<sup>o</sup> * n<sup>кв</sup> = <span
+                            class="water-supply__answer-one"></span></p>
+                    <p>
+                    <div class="water-supply__formula">P<sup>tot</sup>=<div class="formula-row"></div>
+                        <div class="numerator">q<sup>tot</sup><sub>hr,u</sub> * U</div>
+                        <div class="denominator">3600 * q<sup>tot</sup><sub>o</sub> * N<sup>tot</sup></div>
+                        <div class="water-supply__total water-supply__answer-sec-tot">=</div>
+                    </div>
+                    </p>
+                    <p>
+                    <div class="water-supply__formula">P<sup>c</sup>=<div class="formula-row"></div>
+                        <div class="numerator">q<sup>c</sup><sub>hr,u</sub> * U</div>
+                        <div class="denominator">3600 * q<sup>c</sup><sub>o</sub> * N<sup>c</sup></div>
+                        <div class="water-supply__total water-supply__answer-sec-c">=</div>
+                    </div>
+                    </p>
+                    <p>
+                    <div class="water-supply__formula">P<sup>h</sup>=<div class="formula-row"></div>
+                        <div class="numerator">q<sup>h</sup><sub>hr,u</sub> * U</div>
+                        <div class="denominator">3600 * q<sup>h</sup><sub>o</sub> * N<sup>h</sup></div>
+                        <div class="water-supply__total water-supply__answer-sec-h">=</div>
+                    </div>
+                    </p>
+                </li>
+                <li class="water-supply__list-item">
+                    <p>Находим значение произведения NP и по приложению 4 СНиП 2.04.01-85* значения коэффициентов α.
+                        Промежуточные значения α находить точной интерполяцией.</p>
+                    <p>N<sup>tot</sup>P<sup>tot</sup> = <span class="water-supply__answer-NP-tot"></span>;
+                        α<sup>tot</sup> = <span class="water-supply__answer-alpha-tot"></span>;</p>
+                    <p>N<sup>c</sup>P<sup>c</sup> = <span class="water-supply__answer-NP-c"></span>; α<sup>c</sup> =
+                        <span class="water-supply__answer-alpha-c"></span>;</p>
+                    <p>N<sup>h</sup>P<sup>h</sup> = <span class="water-supply__answer-NP-h"></span>; α<sup>h</sup> =
+                        <span class="water-supply__answer-alpha-h"></span>;</p>
+                </li>
+                <li class="water-supply__list-item">
+                    <p>Определяем расчётные секундные расходы:</p>
+                    <p>q<sup>tot</sup> = 5 * q<sup>tot</sup><sub>o</sub> * α<sup>tot</sup> = <span
+                            class="water-supply__answer-q-tot"></span>;</p>
+                    <p>q<sup>c</sup> = 5 * q<sup>c</sup><sub>o</sub> * α<sup>c</sup> = <span
+                            class="water-supply__answer-q-c"></span>;</p>
+                    <p>q<sup>h</sup> = 5 * q<sup>h</sup><sub>o</sub> * α<sup>h</sup> = <span
+                            class="water-supply__answer-q-h"></span>;</p>
+                </li>
+                <li class="water-supply__list-item">
+                    <p>Определим часовую вероятность действия приборов по формулам:</p>
+                    <p>
+                    <div class="water-supply__formula">P<sup>tot</sup><sub>hr</sub> =<div class="formula-row-two"></div>
+                        <div class="numerator-two">3600 * P<sup>tot</sup><sub>hr,u</sub> * q<sup>tot</sup><sub>o</sub>
+                        </div>
+                        <div class="denominator-two">q<sup>tot</sup><sub>o,hr</sub></div>
+                        <div class="water-supply__total-two water-supply__answer-hour-tot">=</div>
+                    </div>
+                    </p>
+                    <p>
+                    <div class="water-supply__formula">P<sup>c</sup><sub>hr</sub> =<div class="formula-row-two"></div>
+                        <div class="numerator-two">3600 * P<sup>c</sup><sub>hr,u</sub> * q<sup>c</sup><sub>o</sub></div>
+                        <div class="denominator-two">q<sup>c</sup><sub>o,hr</sub></div>
+                        <div class="water-supply__total-two water-supply__answer-hour-c">=</div>
+                    </div>
+                    </p>
+                    <p>
+                    <div class="water-supply__formula">P<sup>h</sup><sub>hr</sub> =<div class="formula-row-two"></div>
+                        <div class="numerator-two">3600 * P<sup>h</sup><sub>hr,u</sub> * q<sup>h</sup><sub>o</sub></div>
+                        <div class="denominator-two">q<sup>h</sup><sub>o,hr</sub></div>
+                        <div class="water-supply__total-two water-supply__answer-hour-h">=</div>
+                    </div>
+                    </p>
+                </li>
+                <li class="water-supply__list-item">
+                    <p>Находим значение произведения NP<sub>hr</sub> и по приложению 4 СНиП 2.04.01-85* значения
+                        коэффициентов α<sub>hr</sub>. Промежуточные значения α<sub>hr</sub> находить точной
+                        интерполяцией.</p>
+                    <p>N<sup>tot</sup>P<sup>tot</sup><sub>hr</sub> = <span
+                            class="water-supply__answer-NP-tot-hr"></span>; α<sup>tot</sup><sub>hr</sub> = <span
+                            class="water-supply__answer-alpha-tot-hr"></span>;</p>
+                    <p>N<sup>c</sup>P<sup>c</sup><sub>hr</sub> = <span class="water-supply__answer-NP-tot-hr"></span>;
+                        α<sup>c</sup><sub>hr</sub> = <span class="water-supply__answer-alpha-tot-hr"></span>;</p>
+                    <p>N<sup>h</sup>P<sup>h</sup><sub>hr</sub> = <span class="water-supply__answer-NP-tot-hr"></span>;
+                        α<sup>h</sup><sub>hr</sub> = <span class="water-supply__answer-alpha-tot-hr"></span>;</p>
+                </li>
+                <li class="water-supply__list-item">
+                    <p>Определяем расчётные часовые расходы.</p>
+                    <p>q<sup>tot</sup><sub>hr</sub> = 5 * q<sup>tot</sup><sub>o,hr</sub> * α<sup>tot</sup><sub>hr</sub>
+                        = <span class="water-supply__answer-q-tot"></span>;</p>
+                    <p>q<sup>c</sup><sub>hr</sub> = 5 * q<sup>c</sup><sub>o,hr</sub> * α<sup>c</sup><sub>hr</sub> =
+                        <span class="water-supply__answer-q-c"></span>;</p>
+                    <p>q<sup>h</sup><sub>hr</sub> = 5 * q<sup>h</sup><sub>o,hr</sub> * α<sup>h</sup><sub>hr</sub> =
+                        <span class="water-supply__answer-q-h"></span>;</p>
+                </li>
+                <li class="water-supply__list-item">
+                    <p>Определяем расход сточных вод согласно п. 3.5 СНиП 2.04.01-85*.</p>
+                    <p>q<sup>s</sup> = q<sup>tot</sup> + q<sup>s</sup><sub>o</sub> = <span
+                            class="water-supply__answer-final"></span>; <br> где q<sup>s</sup><sub>o</sub> определяется
+                        по прил. 2 СНиП 2.04.01-85*.</p>
+                </li>
+            </ol>
+
+            <h2 class="sub-title">ЗАДАЧА 2</h2>
+            <p>Для условий задачи 1 подобрать водомеры для холодной и горячей воды для поквартирных подводок и для всего
+                здания в целом, определить потери напора в них.</p>
+            <h2 class="sub-title">решение</h2>
+            <p>Методика подбора счётчиков воды описана в п. 11.2-11.4 СНиП 2.04.01-85*. Подберём водомер для холодной
+                воды, устанавливаемый на всё здание. Остальные водомеры подбираются аналогично.</p>
+
+            <ol class="water-supply__list">
+                <li class="water-supply__list-item"></li>
+                <li class="water-supply__list-item"></li>
+                <li class="water-supply__list-item"></li>
+                <li class="water-supply__list-item"></li>
+                <li class="water-supply__list-item"></li>
+                <li class="water-supply__list-item"></li>
+                <li class="water-supply__list-item"></li>
+                <li class="water-supply__list-item"></li>
+            </ol>
+
+            <h2 class="sub-title">ЗАДАЧА 2</h2>
+            <p>Определить потери напора в трубопроводе с условным проходом d = 70 мм, длиной l = 70 мм при расчётном
+                расходе q = 7,0 л/с.</p>
+            <p>Расчёт произвести для труб:</p>
+            <ol class="water-supply__list">
+                <li class="water-supply__list-item">стальных водогазопроводных (ГОСТ 3262-75*);</li>
+                <li class="water-supply__list-item">стальных электросварных (ГОСТ 10704-76 и ГОСТ 8696-74);</li>
+                <li class="water-supply__list-item">чугунных (ГОСТ 9583-75);</li>
+                <li class="water-supply__list-item">асбестоцементных (ГОСТ 539-8, класс ВТ9, тип 1);</li>
+                <li class="water-supply__list-item">полиэтиленовых (ГОСТ 18599-83).</li>
+            </ol>
+            <h2 class="sub-title">исходные данные</h2>
+            <label class="water-supply__given">
+                <input class="water-supply__given-item" type="number">
+                d, мм
+            </label>
+            <label class="water-supply__given">
+                <input class="water-supply__given-item" type="number">
+                q, л/с
+            </label>
+            <label class="water-supply__given">
+                <input class="water-supply__given-item" type="number">
+                I<sub>p</sub>, м
+            </label>
+            <input class="water-supply__send-two" type="submit" value="Посчитать">
+
+            <h2 class="sub-title">решение</h2>
+            <p>Расчёт ведём по таблицам Ф.А. Шевелева. (Шевелев Ф.А., Таблицы для гидравлического расчёта стальных,
+                чугунных, асбестоцементных, пластмассовых и стеклянных водопроводных труб. Изд. 5-е, доп. М.,
+                Стройиздат, 1973, 112 с).</p>
+            <ol class="water-supply__list">
+                <li class="water-supply__list-item"></li>
+                <li class="water-supply__list-item"></li>
+                <li class="water-supply__list-item"></li>
+                <li class="water-supply__list-item"></li>
+                <li class="water-supply__list-item"></li>
+            </ol>
+        </div>
+    </section>
+
+
+
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
