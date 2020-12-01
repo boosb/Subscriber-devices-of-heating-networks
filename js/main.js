@@ -4,7 +4,69 @@ const numberApartments = document.querySelector('.number-apartments'),
 
 function defineAlpha(num) {
     let x,
-        arr = [[4.0, 2.210],
+        arr = [[0.015,0.202],
+        [0.016,0.205],
+        [0.017,0.207],
+        [0.018,0.210],
+        [0.019,0.212],
+        [0.020,0.215],
+        [0.021,0.217],
+        [0.022,0.219],
+        [0.023,0.222],
+        [0.024,0.224],
+        [0.025,0.226],
+        [0.026,0.228],
+        [0.027,0.230],
+        [0.028,0.233],
+        [0.029,0.235],
+        [0.030,0.237],
+        [0.031,0.239],
+        [0.032,0.241],
+        [0.033,0.243],
+        [0.034,0.245],
+        [0.035,0.247],
+        [0.036,0.249],
+        [0.037,0.250],
+        [0.038,0.252],
+        [0.039,0.254],
+        [0.040,0.256],
+        [0.041,0.258],
+        [0.042,0.259],
+        [0.043,0.261],
+        [0.044,0.263],
+        [0.045,0.265],
+        [0.046,0.266],
+        [0.047,0.268],
+        [0.048,0.270],
+        [0.049,0.271],
+        [0.050,0.273],
+        [0.052,0.276],
+        [0.054,0.280],
+        [0.056,0.283],
+        [0.058,0.286],
+        [0.060,0.289],
+        [0.062,0, 292],
+        [0.064,0.295],
+        [0.065,0.298],
+        [0.068,0.301],
+        [0.070,0.304],
+        [0.072,0.307],
+        [0.074,0.309],
+        [0.076,0.312],
+        [0.078,0.315],
+        [0.080,0.318],
+        [0.082,0.320],
+        [0.084,0.323],
+        [0.086,0.326],
+        [0.088, 0.328],
+        [0.090, 0.331],
+        [0.092, 0.333],
+        [0.094, 0.336],
+        [0.096, 0.338],
+        [0.098, 0.341],
+        [0.100, 0.343],
+        [0.105, 0.349],
+        [4.0, 2.210],
         [4.1, 2.246],
         [4.2, 2.281],
         [4.3, 2.317],
@@ -233,8 +295,22 @@ function defineAlpha(num) {
         }
     }
 
-    let result = (arr[x - 1][1] + ((arr[x][1] - arr[x - 1][1]) / (arr[x][0] - arr[x - 1][0])) * (num - arr[x - 1][0])).toFixed(3);
+    let result = arr[x - 1][1] + ((arr[x][1] - arr[x - 1][1]) / (arr[x][0] - arr[x - 1][0])) * (num - arr[x - 1][0]);
     return result;
+}
+
+function findHydraulicResistance(num) {
+    let arr = [[15, 14.5], [20, 5.18], [25, 2.64], [32, 1.3], [40, 0.5], [50, 0.143], [65, 0.0081], [80, 0.00264], [100, 0.000766], [150, 0.00013], [200, 0.000035], [250, 0.000018]];
+    let result = 0;
+    for (let i = 0; i < arr.length; i++) {
+        result = arr[i][1] * Math.pow(num, 2);
+        if (result < 5) {
+            return {
+                result: result,
+                index: arr[i][0]
+            };
+        }
+    }
 }
 
 sendOne.onclick = function () {
@@ -267,7 +343,15 @@ sendOne.onclick = function () {
         answerQTotHr = document.querySelector('.water-supply__answer-q-tot-hr'),
         answerQCHr = document.querySelector('.water-supply__answer-q-c-hr'),
         answerQHHr = document.querySelector('.water-supply__answer-q-h-hr'),
-        answerFinal = document.querySelector('.water-supply__answer-final');
+        answerFinal = document.querySelector('.water-supply__answer-final'),
+
+        taskTwoOne = document.querySelector('.water-supply__answer-task-two-one'),
+        taskTwoTwo = document.querySelector('.water-supply__answer-task-two-two'),
+        indexOne = document.querySelector('.water-supply__index-one'),
+        taskTwoThree = document.querySelector('.water-supply__answer-task-two-three'),
+        taskTwoFour = document.querySelector('.water-supply__answer-task-two-four'),
+        taskTwoSeven = document.querySelector('.water-supply__answer-task-two-seven'),
+        taskTwoEight = document.querySelector('.water-supply__answer-task-two-eight');
 
     let Ntot = 4 * numApartments,
         Nh = 3 * numApartments;
@@ -293,9 +377,9 @@ sendOne.onclick = function () {
         NPCNum = Number(NPC),
         NPH = (Nh * Ph).toFixed(3),
         NPHNum = Number(NPH),
-        alphaSecTot = defineAlpha(NPTotNum),
-        alphaSecC = defineAlpha(NPCNum),
-        alphaSecH = defineAlpha(NPHNum);
+        alphaSecTot = defineAlpha(NPTotNum).toFixed(3),
+        alphaSecC = defineAlpha(NPCNum).toFixed(3),
+        alphaSecH = defineAlpha(NPHNum).toFixed(3);
 
     answerNPTot.textContent = NPTot;
     answerNPC.textContent = NPC;
@@ -304,9 +388,12 @@ sendOne.onclick = function () {
     answerAlphaC.textContent = alphaSecC;
     answerAlphaH.textContent = alphaSecH;
 
+    resultQC = (5 * 0.2 * alphaSecC).toFixed(3);
+    resultQH = (5 * 0.2 * alphaSecH).toFixed(3);
+
     answerQTot.textContent = (5 * 0.3 * alphaSecTot).toFixed(3);
-    answerQC.textContent = (5 * 0.2 * alphaSecC).toFixed(3);
-    answerQH.textContent = (5 * 0.2 * alphaSecH).toFixed(3);
+    answerQC.textContent = resultQC;
+    answerQH.textContent = resultQH;
 
     let PtotHr = ((3600 * Ptot * 0.3) / 300).toFixed(4),
         PcHr = ((3600 * Pc * 0.2) / 200).toFixed(4),
@@ -319,9 +406,9 @@ sendOne.onclick = function () {
     let NPTotHr = Ntot * PtotHr,
         NPCHr = Ntot * PcHr,
         NPHHr = Nh * PhHr,
-        alphaTotHr = defineAlpha(NPTotHr),
-        alphaCHr = defineAlpha(NPCHr),
-        alphaHHr = defineAlpha(NPHHr);
+        alphaTotHr = defineAlpha(NPTotHr).toFixed(3),
+        alphaCHr = defineAlpha(NPCHr).toFixed(3),
+        alphaHHr = defineAlpha(NPHHr).toFixed(3);
 
     answerNPTotHr.textContent = NPTotHr.toFixed(3);
     answerNPCHr.textContent = NPCHr.toFixed(3);
@@ -339,4 +426,45 @@ sendOne.onclick = function () {
     answerQHHr.textContent = qHHr;
 
     answerFinal.textContent = (5 * 0.3 * alphaSecTot + 1.6).toFixed(3);
+
+    //start of decision second task
+
+    taskTwoOne.innerHTML = '= ' + ((180 * U) / (1000 * 24)).toFixed(1) + ' м<sup>3</sup>/ч';
+    let pressureLossOne = findHydraulicResistance(resultQC);
+    taskTwoTwo.textContent = ' ' + resultQC + ' л/с';
+    taskTwoThree.textContent = ' ' + pressureLossOne.result.toFixed(2) + ' м, что меньше допустимых 5 м.';
+    indexOne.textContent = 'dy' + pressureLossOne.index;
+    document.querySelector('.water-supply__installation-diameter-one').textContent = pressureLossOne.index + ' мм';
+
+    taskTwoFour.innerHTML = '= ' + ((120 * U) / (1000 * 24)).toFixed(1) + ' м<sup>3</sup>/ч';
+    let pressureLossTwo = findHydraulicResistance(resultQH);
+    document.querySelector('.water-supply__answer-task-two-five').textContent = resultQH + ' л/с';
+    document.querySelector('.water-supply__index-two').textContent = 'dy' + pressureLossTwo.index;
+    document.querySelector('.water-supply__answer-task-two-nine').textContent = ' ' + pressureLossTwo.result.toFixed(2) + ' м, что меньше допустимых 5 м.';
+    document.querySelector('.water-supply__answer-task-two-six').textContent = pressureLossTwo.index + ' мм';
+
+    taskTwoSeven.innerHTML = '= ' + ((180 * 4) / (1000 * 24)).toFixed(2) + ' м<sup>3</sup>/ч';
+    let NcPc = (4 * Pc).toFixed(4);
+        alphaNcPc = Number(defineAlpha(NcPc).toFixed(4)),
+        qcTwo = 5 * 0.2 *alphaNcPc;
+        pressureLossThree = findHydraulicResistance(qcTwo);
+    document.querySelector('.water-supply__answer-task-two-twelve').innerHTML = NcPc + ';  α<sup>c</sup> = ' + alphaNcPc + ';';
+    document.querySelector('.water-supply__answer-task-two-thirteen').textContent = qcTwo + ' л/с;';
+    document.querySelector('.water-supply__index-three').textContent = 'dy' + pressureLossThree.index;
+    document.querySelector('.water-supply__answer-task-two-ten').textContent = ' ' + pressureLossThree.result.toFixed(2) + ' м, что меньше допустимых 5 м.';
+    document.querySelector('.water-supply__answer-task-two-eleven').textContent = pressureLossThree.index + ' мм.';
+
+    console.log(Pc, NcPc, alphaNcPc)
+    taskTwoEight.innerHTML = '= ' + ((120 * 3) / (1000 * 24)).toFixed(3) + ' м<sup>3</sup>/ч';
+    let NhPh = (3 * Ph).toFixed(4);
+        alphaNhPh = Number(defineAlpha(NhPh).toFixed(5)),
+        qhTwo = 5 * 0.2 *alphaNhPh;
+        pressureLossFour = findHydraulicResistance(qhTwo);
+    document.querySelector('.water-supply__answer-task-two-fourteen').innerHTML = NhPh + ';  α<sup>c</sup> = ' + alphaNhPh + ';';
+    document.querySelector('.water-supply__answer-task-two-fifteen').textContent = qhTwo + ' л/с;';
+    document.querySelector('.water-supply__index-four').textContent = 'dy' + pressureLossFour.index;
+    document.querySelector('.water-supply__answer-task-two-sixteen').textContent = ' ' + pressureLossFour.result.toFixed(2) + ' м, что меньше допустимых 5 м.';
+    document.querySelector('.water-supply__answer-task-two-seventeen').textContent = pressureLossFour.index + ' мм.';
+
+
 }

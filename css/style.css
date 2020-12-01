@@ -122,6 +122,12 @@ h1, h2, h3, h4, h5, h6 {
     right: 6px;
 }
 
+.numerator-three{
+    position: absolute;
+    top: -17px;
+    right: 45px;
+}
+
 .denominator-two{
     position: absolute;
     bottom: -17px;
@@ -132,4 +138,29 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 5px;
     right: -85px;
+}
+
+.water-supply__total-three{
+    font-weight: 700;
+    position: absolute;
+    top: 0px;
+    right: -105px;
+}
+
+.water-supply__answer-q-c,
+.water-supply__answer-task-two-two,
+.water-supply__answer-task-two-three,
+.water-supply__installation-diameter-one,
+.water-supply__answer-task-two-five,
+.water-supply__answer-task-two-nine,
+.water-supply__answer-task-two-six,
+.water-supply__answer-task-two-ten,
+.water-supply__answer-task-two-eleven,
+.water-supply__answer-task-two-thirteen,
+.water-supply__answer-task-two-twelve,
+.water-supply__answer-task-two-fourteen,
+.water-supply__answer-task-two-fifteen,
+.water-supply__answer-task-two-sixteen,
+.water-supply__answer-task-two-seventeen{
+    font-weight: 700;
 }
