@@ -531,6 +531,18 @@ function findSpecificLosses(arr, d, q) {
 }
 
 sendTwo.onclick = function () {
+    let requestURL = 'https://boosb.github.io/Subscriber-devices-of-heating-networks/json/taskOneTwoThree.json';
+    let request = new XMLHttpRequest();
+
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function() {
+        let arraySteelElectrowelded = request.response;
+        console.log(arraySteelElectrowelded)
+    }
+
     let conditional = Number(conditionalPass.value),
         //pipeLgt = Number(pipeLength.value),
         consumption = Number(estimatedConsumption.value);

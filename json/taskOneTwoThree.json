@@ -1,7 +1,30 @@
 
 {
-   
-    
+    "steelWaterAndGasPipes": {
+        "diameterList": [50, 70, 80, 90],
+        "mainArray": [
+            {
+                "diameter": 50,
+                "estimatedExpense": [6.0,6.1,6.2,6.3,6.4],
+                "specificLosses": [398.8,412.2,425.9,439.7,453.8]
+            },
+            {
+                "diameter": 70,
+                "estimatedExpense": [6.0,6.1,6.2,6.3,6.4,6.5,6.6,6.7,6.8,6.9,7.0,7.1,7.2,7.3,7.4,7.5,7.6,7.7,7.8],
+                "specificLosses": [108.3,112.0,115.7,119.4,123.2,127.1,131.1,135.1,139.1,143.2,147.4,151.7,156.0,160.3,164.8,169.2,173.8,178.4,183.0]
+            },
+            {
+                "diameter": 80,
+                "estimatedExpense": [],
+                "specificLosses": []
+            },
+            {
+                "diameter": 90,
+                "estimatedExpense": [],
+                "specificLosses": []
+            }
+        ]
+    },    
     "steelElectrowelded": {
         "diameterList": [50, 60, 75, 80, 100, 125, 150, 175, 200, 250],
         "mainArray": [
