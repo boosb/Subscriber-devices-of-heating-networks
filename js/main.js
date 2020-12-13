@@ -1,63 +1,67 @@
 const numberApartments = document.querySelector('.number-apartments'),
     averageOccupancy = document.querySelector('.average-occupancy'),
-    sendOne = document.querySelector('.water-supply__send-one');
+    sendOne = document.querySelector('.water-supply__send-one'),
+    sendTwo = document.querySelector('.water-supply__send-two'),
+    conditionalPass = document.querySelector('.conditional-pass'),
+    pipeLength = document.querySelector('.pipe-length'),
+    estimatedConsumption = document.querySelector('.estimated-consumption');
 
 function defineAlpha(num) {
     let x,
-        arr = [[0.015,0.202],
-        [0.016,0.205],
-        [0.017,0.207],
-        [0.018,0.210],
-        [0.019,0.212],
-        [0.020,0.215],
-        [0.021,0.217],
-        [0.022,0.219],
-        [0.023,0.222],
-        [0.024,0.224],
-        [0.025,0.226],
-        [0.026,0.228],
-        [0.027,0.230],
-        [0.028,0.233],
-        [0.029,0.235],
-        [0.030,0.237],
-        [0.031,0.239],
-        [0.032,0.241],
-        [0.033,0.243],
-        [0.034,0.245],
-        [0.035,0.247],
-        [0.036,0.249],
-        [0.037,0.250],
-        [0.038,0.252],
-        [0.039,0.254],
-        [0.040,0.256],
-        [0.041,0.258],
-        [0.042,0.259],
-        [0.043,0.261],
-        [0.044,0.263],
-        [0.045,0.265],
-        [0.046,0.266],
-        [0.047,0.268],
-        [0.048,0.270],
-        [0.049,0.271],
-        [0.050,0.273],
-        [0.052,0.276],
-        [0.054,0.280],
-        [0.056,0.283],
-        [0.058,0.286],
-        [0.060,0.289],
-        [0.062,0, 292],
-        [0.064,0.295],
-        [0.065,0.298],
-        [0.068,0.301],
-        [0.070,0.304],
-        [0.072,0.307],
-        [0.074,0.309],
-        [0.076,0.312],
-        [0.078,0.315],
-        [0.080,0.318],
-        [0.082,0.320],
-        [0.084,0.323],
-        [0.086,0.326],
+        arr = [[0.015, 0.202],
+        [0.016, 0.205],
+        [0.017, 0.207],
+        [0.018, 0.210],
+        [0.019, 0.212],
+        [0.020, 0.215],
+        [0.021, 0.217],
+        [0.022, 0.219],
+        [0.023, 0.222],
+        [0.024, 0.224],
+        [0.025, 0.226],
+        [0.026, 0.228],
+        [0.027, 0.230],
+        [0.028, 0.233],
+        [0.029, 0.235],
+        [0.030, 0.237],
+        [0.031, 0.239],
+        [0.032, 0.241],
+        [0.033, 0.243],
+        [0.034, 0.245],
+        [0.035, 0.247],
+        [0.036, 0.249],
+        [0.037, 0.250],
+        [0.038, 0.252],
+        [0.039, 0.254],
+        [0.040, 0.256],
+        [0.041, 0.258],
+        [0.042, 0.259],
+        [0.043, 0.261],
+        [0.044, 0.263],
+        [0.045, 0.265],
+        [0.046, 0.266],
+        [0.047, 0.268],
+        [0.048, 0.270],
+        [0.049, 0.271],
+        [0.050, 0.273],
+        [0.052, 0.276],
+        [0.054, 0.280],
+        [0.056, 0.283],
+        [0.058, 0.286],
+        [0.060, 0.289],
+        [0.062, 0, 292],
+        [0.064, 0.295],
+        [0.065, 0.298],
+        [0.068, 0.301],
+        [0.070, 0.304],
+        [0.072, 0.307],
+        [0.074, 0.309],
+        [0.076, 0.312],
+        [0.078, 0.315],
+        [0.080, 0.318],
+        [0.082, 0.320],
+        [0.084, 0.323],
+        [0.086, 0.326],
         [0.088, 0.328],
         [0.090, 0.331],
         [0.092, 0.333],
@@ -445,9 +449,9 @@ sendOne.onclick = function () {
 
     taskTwoSeven.innerHTML = '= ' + ((180 * 4) / (1000 * 24)).toFixed(2) + ' м<sup>3</sup>/ч';
     let NcPc = (4 * Pc).toFixed(4);
-        alphaNcPc = Number(defineAlpha(NcPc).toFixed(4)),
-        qcTwo = 5 * 0.2 *alphaNcPc;
-        pressureLossThree = findHydraulicResistance(qcTwo);
+    alphaNcPc = Number(defineAlpha(NcPc).toFixed(4)),
+        qcTwo = 5 * 0.2 * alphaNcPc;
+    pressureLossThree = findHydraulicResistance(qcTwo);
     document.querySelector('.water-supply__answer-task-two-twelve').innerHTML = NcPc + ';  α<sup>c</sup> = ' + alphaNcPc + ';';
     document.querySelector('.water-supply__answer-task-two-thirteen').textContent = qcTwo + ' л/с;';
     document.querySelector('.water-supply__index-three').textContent = 'dy' + pressureLossThree.index;
@@ -457,14 +461,82 @@ sendOne.onclick = function () {
     console.log(Pc, NcPc, alphaNcPc)
     taskTwoEight.innerHTML = '= ' + ((120 * 3) / (1000 * 24)).toFixed(3) + ' м<sup>3</sup>/ч';
     let NhPh = (3 * Ph).toFixed(4);
-        alphaNhPh = Number(defineAlpha(NhPh).toFixed(5)),
-        qhTwo = 5 * 0.2 *alphaNhPh;
-        pressureLossFour = findHydraulicResistance(qhTwo);
+    alphaNhPh = Number(defineAlpha(NhPh).toFixed(5)),
+        qhTwo = 5 * 0.2 * alphaNhPh;
+    pressureLossFour = findHydraulicResistance(qhTwo);
     document.querySelector('.water-supply__answer-task-two-fourteen').innerHTML = NhPh + ';  α<sup>c</sup> = ' + alphaNhPh + ';';
     document.querySelector('.water-supply__answer-task-two-fifteen').textContent = qhTwo + ' л/с;';
     document.querySelector('.water-supply__index-four').textContent = 'dy' + pressureLossFour.index;
     document.querySelector('.water-supply__answer-task-two-sixteen').textContent = ' ' + pressureLossFour.result.toFixed(2) + ' м, что меньше допустимых 5 м.';
     document.querySelector('.water-supply__answer-task-two-seventeen').textContent = pressureLossFour.index + ' мм.';
+}
 
+/*let arraySteelElectrowelded = {
+    diameterList: [50, 60, 75, 80, 100, 125, 150, 175, 200, 250],
+    mainArray: [
+        {
+            diameter: 50,
+            estimatedExpense: [],
+            specificLosses: []
+        },
+        {
+            diameter: 60,
+            estimatedExpense: [],
+            specificLosses: []
+        },
+        {
+            diameter: 75,
+            estimatedExpense: [],
+            specificLosses: []
+        },
+        {
+            diameter: 80,
+            estimatedExpense: [],
+            specificLosses: []
+        }
+    ]
+    [[50, 6.0, 132.8], [50, 6.1, 137.3], [50, 6.2, 141.8], [50, 6.3, 146.4], [50, 6.4, 151.1], [50, 6.5, 155.9], [50, 6.6, 160.7], [50, 6.7, 165.6], [50, 6.8, 170.6], [50, 6.9, 175.6], [50, 7.0, 180.8], [50, 7.1, 186.0], [50, 7.2, 191.2], [50, 7.3, 196.6], [50, 7.4, 202.0], [50, 7.5, 207.5], [50, 7.6, 213.1], [50, 7.7, 218.7], [50, 7.8, 224.5],
+    [60, 6.0, 82.5], [60, 6.1, 85.3], [60, 6.2, 88.1], [60, 6.3, 91.0], [60, 6.4, 38.2], [60, 6.5, 93.9], [60, 6.6, 96.9], [60, 6.7, 99.9], [60, 6.8, 102.9], [60, 6.9, 106.0], [60, 7.0, 109.1], [60, 7.1, 112.3], [60, 7.2, 115.6], [60, 7.3, 118.8], [60, 7.4, 122.2], [60, 7.5, 125.5], [60, 7.6, 128.9], [60, 7.7, 132.4], [60, 7.8, 135.9],
+    [75, 6.0, 33.9], [75, 6.1, 35.0], [75, 6.2, 36.0], [75, 6.3, 37.1], [75, 6.4, 38.2], [75, 6.5, 39.3], [75, 6.6, 40.5], [75, 6.7, 41.7], [75, 6.8, 43.0], [75, 6.9, 44.2], [75, 7.0, 45.5], [75, 7.1, 46.8], [75, 7.2, 48.2], [75, 7.3, 49.5], [75, 7.4, 50.9], [75, 7.5, 52.3], [75, 7.6, 53.7], [75, 7.7, 55.1], [75, 7.8, 56.5]]
+};
+*/
+/*
+let arraySteelElectrowelded = {
+    diameterList: [50, 60, 75, 80, 100, 125, 150, 175, 200, 250],
+    data: [[50, 6.0, 132.8], [50, 6.1, 137.3], [50, 6.2, 141.8], [50, 6.3, 146.4], [50, 6.4, 151.1], [50, 6.5, 155.9], [50, 6.6, 160.7], [50, 6.7, 165.6], [50, 6.8, 170.6], [50, 6.9, 175.6], [50, 7.0, 180.8], [50, 7.1, 186.0], [50, 7.2, 191.2], [50, 7.3, 196.6], [50, 7.4, 202.0], [50, 7.5, 207.5], [50, 7.6, 213.1], [50, 7.7, 218.7], [50, 7.8, 224.5],
+    [60, 6.0, 82.5], [60, 6.1, 85.3], [60, 6.2, 88.1], [60, 6.3, 91.0], [60, 6.4, 38.2], [60, 6.5, 93.9], [60, 6.6, 96.9], [60, 6.7, 99.9], [60, 6.8, 102.9], [60, 6.9, 106.0], [60, 7.0, 109.1], [60, 7.1, 112.3], [60, 7.2, 115.6], [60, 7.3, 118.8], [60, 7.4, 122.2], [60, 7.5, 125.5], [60, 7.6, 128.9], [60, 7.7, 132.4], [60, 7.8, 135.9],
+    [75, 6.0, 33.9], [75, 6.1, 35.0], [75, 6.2, 36.0], [75, 6.3, 37.1], [75, 6.4, 38.2], [75, 6.5, 39.3], [75, 6.6, 40.5], [75, 6.7, 41.7], [75, 6.8, 43.0], [75, 6.9, 44.2], [75, 7.0, 45.5], [75, 7.1, 46.8], [75, 7.2, 48.2], [75, 7.3, 49.5], [75, 7.4, 50.9], [75, 7.5, 52.3], [75, 7.6, 53.7], [75, 7.7, 55.1], [75, 7.8, 56.5]]
+};*/
+/*
+let arraySteelElectrowelded = [[50, 60, 75, 80, 100, 125, 150, 175, 200, 250], [50, 6.0, 132.8], [50, 6.1, 137.3], [50, 6.2, 141.8], [50, 6.3, 146.4], [50, 6.4, 151.1], [50, 6.5, 155.9], [50, 6.6, 160.7], [50, 6.7, 165.6], [50, 6.8, 170.6], [50, 6.9, 175.6], [50, 7.0, 180.8], [50, 7.1, 186.0], [50, 7.2, 191.2], [50, 7.3, 196.6], [50, 7.4, 202.0], [50, 7.5, 207.5], [50, 7.6, 213.1], [50, 7.7, 218.7], [50, 7.8, 224.5],
+[60, 6.0, 82.5], [60, 6.1, 85.3], [60, 6.2, 88.1], [60, 6.3, 91.0], [60, 6.4, 38.2], [60, 6.5, 93.9], [60, 6.6, 96.9], [60, 6.7, 99.9], [60, 6.8, 102.9], [60, 6.9, 106.0], [60, 7.0, 109.1], [60, 7.1, 112.3], [60, 7.2, 115.6], [60, 7.3, 118.8], [60, 7.4, 122.2], [60, 7.5, 125.5], [60, 7.6, 128.9], [60, 7.7, 132.4], [60, 7.8, 135.9],
+[75, 6.0, 33.9], [75, 6.1, 35.0], [75, 6.2, 36.0], [75, 6.3, 37.1], [75, 6.4, 38.2], [75, 6.5, 39.3], [75, 6.6, 40.5], [75, 6.7, 41.7], [75, 6.8, 43.0], [75, 6.9, 44.2], [75, 7.0, 45.5], [75, 7.1, 46.8], [75, 7.2, 48.2], [75, 7.3, 49.5], [75, 7.4, 50.9], [75, 7.5, 52.3], [75, 7.6, 53.7], [75, 7.7, 55.1], [75, 7.8, 56.5]];*/
+
+function findSpecificLosses(arr, d, q) {
+    let diameter = 0;
+    console.log(arr.diameterList)
+    for (let i = 0; i < arr.diameterList.length; i++) {
+        if (arr.diameterList[i] >= d) {
+            diameter = arr.diameterList[i];
+            console.log(diameter)
+            break;
+        }
+    }
+    for (let i = 1; i < arr.data.length; i++) {
+        if (arr.data[i][0] === diameter && arr.data[i][1] === q) {
+            console.log(arr.data[2])
+            return { thousandI: arr.data[i][2], diameter: diameter }
+        }
+    }
+}
+
+sendTwo.onclick = function () {
+    let conditional = Number(conditionalPass.value),
+        //pipeLgt = Number(pipeLength.value),
+        consumption = Number(estimatedConsumption.value);
+
+    let oneDecision = findSpecificLosses(arraySteelElectrowelded, conditional, consumption);
+    console.log(oneDecision)
+    document.querySelector('.water-supply__task-three-answer--one').innerHTML = (oneDecision.thousandI * oneDecision.diameter / 1000).toFixed(3) + ' м';
 
 }

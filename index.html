@@ -270,16 +270,16 @@
             </ol>
             <h2 class="sub-title">исходные данные</h2>
             <label class="water-supply__given">
-                <input class="water-supply__given-item" type="number">
+                <input class="water-supply__given-item conditional-pass" type="number">
                 d, мм
             </label>
             <label class="water-supply__given">
-                <input class="water-supply__given-item" type="number">
-                q, л/с
+                <input class="water-supply__given-item pipe-length" type="number">
+                I<sub>p</sub>, мм
             </label>
             <label class="water-supply__given">
-                <input class="water-supply__given-item" type="number">
-                I<sub>p</sub>, м
+                <input class="water-supply__given-item estimated-consumption" type="number">
+                q, л/с
             </label>
             <input class="water-supply__send-two" type="submit" value="Посчитать">
 
@@ -288,8 +288,13 @@
                 чугунных, асбестоцементных, пластмассовых и стеклянных водопроводных труб. Изд. 5-е, доп. М.,
                 Стройиздат, 1973, 112 с).</p>
             <ol class="water-supply__list">
-                <li class="water-supply__list-item"></li>
-                <li class="water-supply__list-item"></li>
+                <li class="water-supply__list-item">
+
+                </li>
+                <li class="water-supply__list-item">
+                    <p><div class="task-three-item-two--text"></div></p>
+                    <p>Потери напора составят:<br> h = 1000i * l / 1000 = <span class="water-supply__task-three-answer--one"></span></p>
+                </li>
                 <li class="water-supply__list-item"></li>
                 <li class="water-supply__list-item"></li>
                 <li class="water-supply__list-item"></li>
