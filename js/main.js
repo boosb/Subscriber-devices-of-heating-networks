@@ -185,7 +185,6 @@ sendOne.onclick = function () {
         document.querySelector('.water-supply__answer-task-two-ten').textContent = ' ' + pressureLossThree.result.toFixed(2) + ' м, что меньше допустимых 5 м.';
         document.querySelector('.water-supply__answer-task-two-eleven').textContent = pressureLossThree.index + ' мм.';
 
-        console.log(Pc, NcPc, alphaNcPc)
         taskTwoEight.innerHTML = '= ' + ((120 * 3) / (1000 * 24)).toFixed(3) + ' м<sup>3</sup>/ч';
         let NhPh = (3 * Ph).toFixed(4);
         alphaNhPh = Number(defineAlpha(NhPh, objJSON).toFixed(5)),
@@ -231,25 +230,25 @@ sendTwo.onclick = function () {
             //pipeLgt = Number(pipeLength.value),
             consumption = Number(estimatedConsumption.value);
 
-        let oneDecision = findSpecificLosses(objJSON.steelElectrowelded, conditional, consumption);
-        let twoDecision = findSpecificLosses(objJSON.steelWaterAndGasPipes, conditional, consumption);
+        let oneDecision = findSpecificLosses(objJSON.steelWaterAndGasPipes, conditional, consumption);
+        let twoDecision = findSpecificLosses(objJSON.steelElectrowelded, conditional, consumption);
         let threeDecision = findSpecificLosses(objJSON.castIron, conditional, consumption);
         let fourDecision = findSpecificLosses(objJSON.asbestosCement, conditional, consumption);
         let fiveDecision = findSpecificLosses(objJSON.polyethylene, conditional, consumption);
 
-        document.querySelector('.task-three-item-text--one').innerHTML = 'Для стальных электросварных при d = ' + oneDecision.diameter + ' находим искомые значения удельных потерь напора 1000i.<br> 1000i = ' + oneDecision.thousandI + ' мм вод. ст./м.';
+        document.querySelector('.task-three-item-text--one').innerHTML = 'Для стальных водогазопроводных при d = ' + oneDecision.diameter + ' находим искомые значения удельных потерь напора 1000i.<br> 1000i = ' + oneDecision.thousandI + ' мм вод. ст./м.';
         document.querySelector('.water-supply__task-three-answer--one').innerHTML = (oneDecision.thousandI * oneDecision.diameter / 1000).toFixed(3) + ' м';
 
         document.querySelector('.task-three-item-text--two').innerHTML = 'Для стальных электросварных при d = ' + twoDecision.diameter + ' находим искомые значения удельных потерь напора 1000i.<br> 1000i = ' + twoDecision.thousandI + ' мм вод. ст./м.';
         document.querySelector('.water-supply__task-three-answer--two').innerHTML = (twoDecision.thousandI * twoDecision.diameter / 1000).toFixed(3) + ' м';
 
-        document.querySelector('.task-three-item-text--three').innerHTML = 'Для стальных электросварных при d = ' + threeDecision.diameter + ' находим искомые значения удельных потерь напора 1000i.<br> 1000i = ' + threeDecision.thousandI + ' мм вод. ст./м.';
+        document.querySelector('.task-three-item-text--three').innerHTML = 'Для чугунных при d = ' + threeDecision.diameter + ' находим искомые значения удельных потерь напора 1000i.<br> 1000i = ' + threeDecision.thousandI + ' мм вод. ст./м.';
         document.querySelector('.water-supply__task-three-answer--three').innerHTML = (threeDecision.thousandI * threeDecision.diameter / 1000).toFixed(3) + ' м';
 
-        document.querySelector('.task-three-item-text--four').innerHTML = 'Для стальных электросварных при d = ' + fourDecision.diameter + ' находим искомые значения удельных потерь напора 1000i.<br> 1000i = ' + fourDecision.thousandI + ' мм вод. ст./м.';
+        document.querySelector('.task-three-item-text--four').innerHTML = 'Для асбестоцементных при d = ' + fourDecision.diameter + ' находим искомые значения удельных потерь напора 1000i.<br> 1000i = ' + fourDecision.thousandI + ' мм вод. ст./м.';
         document.querySelector('.water-supply__task-three-answer--four').innerHTML = (fourDecision.thousandI * fourDecision.diameter / 1000).toFixed(3) + ' м';
 
-        document.querySelector('.task-three-item-text--five').innerHTML = 'Для стальных электросварных при d = ' + fiveDecision.diameter + ' находим искомые значения удельных потерь напора 1000i.<br> 1000i = ' + fiveDecision.thousandI + ' мм вод. ст./м.';
+        document.querySelector('.task-three-item-text--five').innerHTML = 'Для полиэтиленовых при d = ' + fiveDecision.diameter + ' находим искомые значения удельных потерь напора 1000i.<br> 1000i = ' + fiveDecision.thousandI + ' мм вод. ст./м.';
         document.querySelector('.water-supply__task-three-answer--five').innerHTML = (fiveDecision.thousandI * fiveDecision.diameter / 1000).toFixed(3) + ' м';
     }
 }

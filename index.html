@@ -16,7 +16,8 @@
         <div class="container">
             <h1 class="main-title">СИСТЕМА ВОДОСНАБЖЕНИЯ</h1>
             <h2 class="sub-title">ЗАДАЧА 1</h2>
-            <p>Определить секундный и часовой расходы воды для жилого дома с централизованным горячим водоснабжением <span class="water-supply__main-given"></span>. В каждой квартире установлены
+            <p>Определить секундный и часовой расходы воды для жилого дома с централизованным горячим водоснабжением
+                <span class="water-supply__main-given"></span>. В каждой квартире установлены
                 следующие санитарно-технические приборы: ванны, длиной 1700 мм, оборудованные душами, умывальник,
                 унитаз, кухонная мойка.
                 Определить расход сточных вод.</p>
@@ -85,9 +86,11 @@
                     <p>N<sup>tot</sup>P<sup>tot</sup> = <span class="water-supply__answer-NP-tot"></span>;
                         α<sup>tot</sup> = <span class="water-supply__answer-alpha-tot"></span>;</p>
                     <p>N<sup>c</sup>P<sup>c</sup> = <span class="water-supply__answer-NP-c"></span>; α<sup>c</sup> =
-                        <span class="water-supply__answer-alpha-c"></span>;</p>
+                        <span class="water-supply__answer-alpha-c"></span>;
+                    </p>
                     <p>N<sup>h</sup>P<sup>h</sup> = <span class="water-supply__answer-NP-h"></span>; α<sup>h</sup> =
-                        <span class="water-supply__answer-alpha-h"></span>;</p>
+                        <span class="water-supply__answer-alpha-h"></span>;
+                    </p>
                 </li>
                 <li class="water-supply__list-item">
                     <p>Определяем расчётные секундные расходы:</p>
@@ -140,9 +143,11 @@
                     <p>q<sup>tot</sup><sub>hr</sub> = 5 * q<sup>tot</sup><sub>o,hr</sub> * α<sup>tot</sup><sub>hr</sub>
                         = <span class="water-supply__answer-q-tot-hr"></span>;</p>
                     <p>q<sup>c</sup><sub>hr</sub> = 5 * q<sup>c</sup><sub>o,hr</sub> * α<sup>c</sup><sub>hr</sub> =
-                        <span class="water-supply__answer-q-c-hr"></span>;</p>
+                        <span class="water-supply__answer-q-c-hr"></span>;
+                    </p>
                     <p>q<sup>h</sup><sub>hr</sub> = 5 * q<sup>h</sup><sub>o,hr</sub> * α<sup>h</sup><sub>hr</sub> =
-                        <span class="water-supply__answer-q-h-hr"></span>;</p>
+                        <span class="water-supply__answer-q-h-hr"></span>;
+                    </p>
                 </li>
                 <li class="water-supply__list-item">
                     <p>Определяем расход сточных вод согласно п. 3.5 СНиП 2.04.01-85*.</p>
@@ -289,31 +294,67 @@
                 Стройиздат, 1973, 112 с).</p>
             <ol class="water-supply__list">
                 <li class="water-supply__list-item">
-                    <p><div class="task-three-item-text--one"></div></p>
-                    <p>Потери напора составят:</p> 
+                    <p>
+                    <div class="task-three-item-text--one"></div>
+                    </p>
+                    <p>Потери напора составят:</p>
                     <p>h = 1000i * l / 1000 = <span class="water-supply__task-three-answer--one"></span></p>
                 </li>
                 <li class="water-supply__list-item">
-                    <p><div class="task-three-item-text--two"></div></p>
+                    <p>
+                    <div class="task-three-item-text--two"></div>
+                    </p>
                     <p>Потери напора составят:</p>
                     <p>h = 1000i * l / 1000 = <span class="water-supply__task-three-answer--two"></span></p>
                 </li>
                 <li class="water-supply__list-item">
-                    <p><div class="task-three-item-text--three"></div></p>
+                    <p>
+                    <div class="task-three-item-text--three"></div>
+                    </p>
                     <p>Потери напора составят:</p>
                     <p>h = 1000i * l / 1000 = <span class="water-supply__task-three-answer--three"></span></p>
                 </li>
                 <li class="water-supply__list-item">
-                    <p><div class="task-three-item-text--four"></div></p>
+                    <p>
+                    <div class="task-three-item-text--four"></div>
+                    </p>
                     <p>Потери напора составят:</p>
                     <p>h = 1000i * l / 1000 = <span class="water-supply__task-three-answer--four"></span></p>
                 </li>
                 <li class="water-supply__list-item">
-                    <p><div class="task-three-item-text--five"></div></p>
+                    <p>
+                    <div class="task-three-item-text--five"></div>
+                    </p>
                     <p>Потери напора составят:</p>
                     <p>h = 1000i * l / 1000 = <span class="water-supply__task-three-answer--five"></span></p>
                 </li>
             </ol>
+            <div class="footer">
+                <p>Если требуется произвести расчёт для конкретного вида трубопровода – потери умножают на
+                    соответствующие коэффициенты:</p>
+                <table class="table">
+                    <tr>
+                        <th>Вид трубопровода</th>
+                        <th>Коэффициент</th>
+                    </tr>
+                    <tr>
+                        <td>Хозяйственно-питьевой</td>
+                        <th>1,3</th>
+                    </tr>
+                    <tr>
+                        <td>Хозяйственно-противопожарный</td>
+                        <th>1,2</th>
+                    </tr>
+                    <tr>
+                        <td>Производственный</td>
+                        <th>1,2</th>
+                    </tr>
+                    <tr>
+                        <td>Производственно-противопожарный</td>
+                        <th>1,15</th>
+                    </tr>
+                </table>
+            </div>
         </div>
     </section>
 
