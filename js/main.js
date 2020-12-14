@@ -471,61 +471,19 @@ sendOne.onclick = function () {
     document.querySelector('.water-supply__answer-task-two-seventeen').textContent = pressureLossFour.index + ' мм.';
 }
 
-/*let arraySteelElectrowelded = {
-    diameterList: [50, 60, 75, 80, 100, 125, 150, 175, 200, 250],
-    mainArray: [
-        {
-            diameter: 50,
-            estimatedExpense: [],
-            specificLosses: []
-        },
-        {
-            diameter: 60,
-            estimatedExpense: [],
-            specificLosses: []
-        },
-        {
-            diameter: 75,
-            estimatedExpense: [],
-            specificLosses: []
-        },
-        {
-            diameter: 80,
-            estimatedExpense: [],
-            specificLosses: []
-        }
-    ]
-    [[50, 6.0, 132.8], [50, 6.1, 137.3], [50, 6.2, 141.8], [50, 6.3, 146.4], [50, 6.4, 151.1], [50, 6.5, 155.9], [50, 6.6, 160.7], [50, 6.7, 165.6], [50, 6.8, 170.6], [50, 6.9, 175.6], [50, 7.0, 180.8], [50, 7.1, 186.0], [50, 7.2, 191.2], [50, 7.3, 196.6], [50, 7.4, 202.0], [50, 7.5, 207.5], [50, 7.6, 213.1], [50, 7.7, 218.7], [50, 7.8, 224.5],
-    [60, 6.0, 82.5], [60, 6.1, 85.3], [60, 6.2, 88.1], [60, 6.3, 91.0], [60, 6.4, 38.2], [60, 6.5, 93.9], [60, 6.6, 96.9], [60, 6.7, 99.9], [60, 6.8, 102.9], [60, 6.9, 106.0], [60, 7.0, 109.1], [60, 7.1, 112.3], [60, 7.2, 115.6], [60, 7.3, 118.8], [60, 7.4, 122.2], [60, 7.5, 125.5], [60, 7.6, 128.9], [60, 7.7, 132.4], [60, 7.8, 135.9],
-    [75, 6.0, 33.9], [75, 6.1, 35.0], [75, 6.2, 36.0], [75, 6.3, 37.1], [75, 6.4, 38.2], [75, 6.5, 39.3], [75, 6.6, 40.5], [75, 6.7, 41.7], [75, 6.8, 43.0], [75, 6.9, 44.2], [75, 7.0, 45.5], [75, 7.1, 46.8], [75, 7.2, 48.2], [75, 7.3, 49.5], [75, 7.4, 50.9], [75, 7.5, 52.3], [75, 7.6, 53.7], [75, 7.7, 55.1], [75, 7.8, 56.5]]
-};
-*/
-/*
-let arraySteelElectrowelded = {
-    diameterList: [50, 60, 75, 80, 100, 125, 150, 175, 200, 250],
-    data: [[50, 6.0, 132.8], [50, 6.1, 137.3], [50, 6.2, 141.8], [50, 6.3, 146.4], [50, 6.4, 151.1], [50, 6.5, 155.9], [50, 6.6, 160.7], [50, 6.7, 165.6], [50, 6.8, 170.6], [50, 6.9, 175.6], [50, 7.0, 180.8], [50, 7.1, 186.0], [50, 7.2, 191.2], [50, 7.3, 196.6], [50, 7.4, 202.0], [50, 7.5, 207.5], [50, 7.6, 213.1], [50, 7.7, 218.7], [50, 7.8, 224.5],
-    [60, 6.0, 82.5], [60, 6.1, 85.3], [60, 6.2, 88.1], [60, 6.3, 91.0], [60, 6.4, 38.2], [60, 6.5, 93.9], [60, 6.6, 96.9], [60, 6.7, 99.9], [60, 6.8, 102.9], [60, 6.9, 106.0], [60, 7.0, 109.1], [60, 7.1, 112.3], [60, 7.2, 115.6], [60, 7.3, 118.8], [60, 7.4, 122.2], [60, 7.5, 125.5], [60, 7.6, 128.9], [60, 7.7, 132.4], [60, 7.8, 135.9],
-    [75, 6.0, 33.9], [75, 6.1, 35.0], [75, 6.2, 36.0], [75, 6.3, 37.1], [75, 6.4, 38.2], [75, 6.5, 39.3], [75, 6.6, 40.5], [75, 6.7, 41.7], [75, 6.8, 43.0], [75, 6.9, 44.2], [75, 7.0, 45.5], [75, 7.1, 46.8], [75, 7.2, 48.2], [75, 7.3, 49.5], [75, 7.4, 50.9], [75, 7.5, 52.3], [75, 7.6, 53.7], [75, 7.7, 55.1], [75, 7.8, 56.5]]
-};*/
-/*
-let arraySteelElectrowelded = [[50, 60, 75, 80, 100, 125, 150, 175, 200, 250], [50, 6.0, 132.8], [50, 6.1, 137.3], [50, 6.2, 141.8], [50, 6.3, 146.4], [50, 6.4, 151.1], [50, 6.5, 155.9], [50, 6.6, 160.7], [50, 6.7, 165.6], [50, 6.8, 170.6], [50, 6.9, 175.6], [50, 7.0, 180.8], [50, 7.1, 186.0], [50, 7.2, 191.2], [50, 7.3, 196.6], [50, 7.4, 202.0], [50, 7.5, 207.5], [50, 7.6, 213.1], [50, 7.7, 218.7], [50, 7.8, 224.5],
-[60, 6.0, 82.5], [60, 6.1, 85.3], [60, 6.2, 88.1], [60, 6.3, 91.0], [60, 6.4, 38.2], [60, 6.5, 93.9], [60, 6.6, 96.9], [60, 6.7, 99.9], [60, 6.8, 102.9], [60, 6.9, 106.0], [60, 7.0, 109.1], [60, 7.1, 112.3], [60, 7.2, 115.6], [60, 7.3, 118.8], [60, 7.4, 122.2], [60, 7.5, 125.5], [60, 7.6, 128.9], [60, 7.7, 132.4], [60, 7.8, 135.9],
-[75, 6.0, 33.9], [75, 6.1, 35.0], [75, 6.2, 36.0], [75, 6.3, 37.1], [75, 6.4, 38.2], [75, 6.5, 39.3], [75, 6.6, 40.5], [75, 6.7, 41.7], [75, 6.8, 43.0], [75, 6.9, 44.2], [75, 7.0, 45.5], [75, 7.1, 46.8], [75, 7.2, 48.2], [75, 7.3, 49.5], [75, 7.4, 50.9], [75, 7.5, 52.3], [75, 7.6, 53.7], [75, 7.7, 55.1], [75, 7.8, 56.5]];*/
+//task three
 
 function findSpecificLosses(arr, d, q) {
     let diameter = 0;
-    console.log(arr.diameterList)
-    for (let i = 0; i < arr.diameterList.length; i++) {
-        if (arr.diameterList[i] >= d) {
-            diameter = arr.diameterList[i];
-            console.log(diameter)
-            break;
-        }
-    }
-    for (let i = 1; i < arr.data.length; i++) {
-        if (arr.data[i][0] === diameter && arr.data[i][1] === q) {
-            console.log(arr.data[2])
-            return { thousandI: arr.data[i][2], diameter: diameter }
+    for (let i=0; i < arr.mainArray.length; i++) {
+        let arrItem = arr.mainArray[i];
+        if (arrItem.diameter >= d) {
+            diameter = arrItem.diameter;
+            for (let j = 0; j < arrItem.estimatedExpense.length; j++) {
+                if (arrItem.estimatedExpense[j] === q ) {
+                    return { thousandI: arrItem.specificLosses[j], diameter: diameter }
+                }
+            }
         }
     }
 }
@@ -538,17 +496,20 @@ sendTwo.onclick = function () {
     request.responseType = 'json';
     request.send();
 
-    request.onload = function() {
-        let arraySteelElectrowelded = request.response;
-        console.log(arraySteelElectrowelded)
+    request.onload = function () {
+        let objJSON = request.response;
+
+        let conditional = Number(conditionalPass.value),
+            //pipeLgt = Number(pipeLength.value),
+            consumption = Number(estimatedConsumption.value);
+
+        let oneDecision = findSpecificLosses(objJSON.steelElectrowelded, conditional, consumption);
+        let twoDecision = findSpecificLosses(objJSON.steelWaterAndGasPipes, conditional, consumption);
+
+        document.querySelector('.task-three-item-text--one').innerHTML = 'Для стальных электросварных при d = ' + twoDecision.diameter + ' находим искомые значения удельных потерь напора 1000i.<br> 1000i = ' + twoDecision.thousandI + ' мм вод. ст./м.';
+        document.querySelector('.water-supply__task-three-answer--one').innerHTML = (twoDecision.thousandI * twoDecision.diameter / 1000).toFixed(3) + ' м';
+
+        document.querySelector('.task-three-item-text--two').innerHTML = 'Для стальных электросварных при d = ' + oneDecision.diameter + ' находим искомые значения удельных потерь напора 1000i.<br> 1000i = ' + oneDecision.thousandI + ' мм вод. ст./м.';
+        document.querySelector('.water-supply__task-three-answer--two').innerHTML = (oneDecision.thousandI * oneDecision.diameter / 1000).toFixed(3) + ' м';
     }
-
-    let conditional = Number(conditionalPass.value),
-        //pipeLgt = Number(pipeLength.value),
-        consumption = Number(estimatedConsumption.value);
-
-    let oneDecision = findSpecificLosses(arraySteelElectrowelded, conditional, consumption);
-    console.log(oneDecision)
-    document.querySelector('.water-supply__task-three-answer--one').innerHTML = (oneDecision.thousandI * oneDecision.diameter / 1000).toFixed(3) + ' м';
-
 }
